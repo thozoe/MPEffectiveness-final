@@ -1,0 +1,376 @@
+\documentclass[11pt,letterpaper,twoside]{article}
+\usepackage{color,graphicx,natbib,lscape,here,geometry,setspace,multirow,enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+%\pdfminorversion=2
+\usepackage{multicol}
+\usepackage{framed}
+\usepackage{authblk}
+\usepackage{silence}
+\WarningsOff[catoptions]
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{rotating}
+\usepackage{multirow}
+%\usepackage{color}
+\usepackage{setspace}
+\usepackage{algorithm2e}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}  
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{graphicx}
+
+\newcommand*{\thead}[1]{\multicolumn{1}{c}{\bfseries #1}}
+\newcommand\mc[1]{\multicolumn{1}{c}{#1}} % handy shortcut macro
+
+
+
+%--- BEGIN Fonts
+%\usepackage{fourier}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{amsfonts}
+
+\usepackage{newtxtext,newtxmath}
+\newcommand*{\scfont}{\fontfamily{ptm}\selectfont}
+
+%\usepackage{charter}
+%\usepackage[bitstream-charter]{mathdesign}
+
+\definecolor{nblue}{RGB}{108, 124, 89}
+\usepackage[colorlinks=true,urlcolor=nblue,linkcolor=nblue,citecolor=nblue,backref=page]{hyperref}
+\usepackage{bigstrut}
+
+\usepackage{tabularx}
+\usepackage{dcolumn}
+
+\usepackage{etoolbox} % reference back from references
+\makeatletter
+\patchcmd{\BR@backref}{\newblock}{\newblock[}{}{}
+\patchcmd{\BR@backref}{\par}{]\par}{}{}
+\makeatother
+\usepackage{float}
+% landscape table
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{rotate}
+\usepackage{longtable}
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\usepackage{comment}
+\usepackage{mathtools}
+\usepackage{colortbl}
+\usepackage[hang,flushmargin]{footmisc} 
+\setlength{\footnotemargin}{2mm}
+\renewcommand*\footnoterule{}
+
+%\usepackage[yyyymmdd]{datetime}
+\usepackage[british]{babel}
+
+\pdfoutput=1
+%%%% Formatting for Journal of Applied Econometrics
+\geometry{top=25mm, bottom=25mm, left=25mm, right=25mm}          % Margins
+%\usepackage[nolists,tablesfirst]{endfloat}                  % Figures and tables at the end of paper
+%\usepackage{float}
+%\restylefloat{table}
+
+%\usepackage[nolists,tablesfirst]{endfloat}
+%\DeclareDelayedFloatFlavour{threeparttable}{table}
+
+%
+%\usepackage{eqparbox}
+%\DeclareDelayedFloatFlavor{sidewaystable}{table}
+%\DeclareDelayedFloatFlavor{sidewaysfigure}{figure}
+
+\usepackage[title,titletoc]{appendix}
+\makeatletter
+\let\oldappendices\appendices
+\renewenvironment{appendices}{%
+    \begin{oldappendices}%
+    \renewcommand{\thefigure}{\ifnum \c@section>\z@ \thesection.\fi\@arabic\c@figure}%
+    \@addtoreset{figure}{section}%
+    \renewcommand{\thetable}{\ifnum \c@section>\z@ \thesection.\fi\@arabic\c@table}%
+    \@addtoreset{table}{section}}{%
+    \end{oldappendices}%
+}\makeatother
+
+%--- BEGIN Formatting Title
+\usepackage{titlesec} % Allows customization of titles
+\titleformat{\section}[block]{\large}{\thesection. }{0em}{\MakeUppercase} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection. }{0em}{\itshape} % Change the look of the section titles
+\titleformat{\subsubsection}[block]{\large}{}{0em}{\itshape} % Change the look of the section titles
+%--- END Formatting Title
+
+%%% Citations
+\let\natbibcitet\citet
+\renewcommand\citet{\bibpunct{(}{)}{,}{a}{,}{,}\natbibcitet}
+\let\natbibcitep\citep
+\renewcommand\citep{\bibpunct{(}{)}{;}{a}{,}{;}\natbibcitep}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\defcitealias{ieo14}{IEO, 2014}
+
+% change title fonts
+\usepackage{sectsty}
+\allsectionsfont{\normalsize}
+
+%% rule out orphans and widows
+\widowpenalty=10000
+\clubpenalty=10000
+
+
+%%% Make equation numbers depend on section numbers
+\makeatletter
+\renewcommand\theequation{\thesection.\arabic{equation}}
+\@addtoreset{equation}{section}
+\makeatother
+\raggedbottom
+
+
+%% caption parameters
+\usepackage{bm}
+\usepackage[font=small]{caption}
+\usepackage{subcaption}
+
+\captionsetup{justification=raggedright,
+        singlelinecheck=false,
+              labelfont={small,bf}}
+              %indention=1cm}
+\makeatletter\let\p@subfigure\thefigure\makeatother
+\newcommand\fnote[1]{\captionsetup{font=small}\caption*{#1}}
+
+%\floatstyle{plaintop}
+%\restylefloat{table}
+
+%\captionsetup[subfigure]{justification=centering} % global setting for subfigure //  to omit subcaption letters e.g. (a)
+
+%--- BEGIN Headers & Footers
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[]{}
+\fancyfoot[]{}
+\fancyfoot[C]{\itshape\footnotesize\thepage} % Page-Number
+
+\fancyhead[CO]{\footnotesize\MakeUppercase{\textit{Hawks vs. Doves}}}
+%\fancyhead[CO]{\footnotesize\MakeUppercase{\textit{Leaning against the Fed}}}
+%\fancyhead[CE]{\footnotesize\MakeUppercase{\textit{N. Hauzenberger, F. Huber,  \& T. O. Zörner}}}
+\setlength{\headheight}{15pt}
+%--- END Headers & Footers
+
+%%% Reference to equation
+%\newcommand{\refeq}[1]{(\ref{#1})}
+
+%\doublespacing
+%%%% References (should be loaded after hyperref)
+\usepackage{cleveref}
+\crefname{chapter}{Chapter}{Chapters}
+\crefname{section}{Section}{Sections}
+\crefname{subsection}{Section}{Sections}
+\crefname{subsubsection}{Section}{Sections}
+\crefname{figure}{Figure}{Figures}
+\crefname{table}{Table}{Tables}
+\crefname{equation}{Equation}{Equations}
+\crefname{appendix}{Appendix}{Appendices}
+\crefname{appendices}{Appendix}{Appendices}
+
+\crefname{app}{Appendix}{Appendices}
+
+\usepackage{catoptions}
+\makeatletter
+\def\figureautorefname{Figure}
+\def\tableautorefname{Table}
+\def\Autoref#1{%
+  \begingroup
+  \edef\reserved@a{\cpttrimspaces{#1}}%
+  \ifcsndefTF{r@#1}{%
+    \xaftercsname{\expandafter\testreftype\@fourthoffive}
+      {r@\reserved@a}.\\{#1}%
+  }{%
+    \ref{#1}%
+  }%
+  \endgroup
+}
+\def\testreftype#1.#2\\#3{%
+  \ifcsndefTF{#1autorefname}{%
+    \def\reserved@a##1##2\@nil{%
+      \uppercase{\def\ref@name{##1}}%
+      \csn@edef{#1autorefname}{\ref@name##2}%
+      \autoref{#3}%
+    }%
+    \reserved@a#1\@nil
+  }{%
+    \autoref{#3}%
+  }%
+}
+\makeatother
+
+%%%% Specifying new column type
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+
+\renewcommand\labelenumi{(\roman{enumi})}
+\renewcommand\theenumi\labelenumi
+
+%\title{\huge{Leaning against the Fed:  Monetary Policy Effectiveness in light of diverging national policy stances}} 
+\title{\huge{Hawks vs. Doves: ECB's Monetary Policy in Light of the Fed's Policy Stance}}%\\\textbf{Preliminary draft -- Please do not cite or circulate}}
+
+\author{}
+%\author{\large{\uppercase{Niko Hauzenberger}\textsuperscript{1}, \uppercase{Florian Huber}\textsuperscript{2} and \uppercase{Thomas O. Zörner}\textsuperscript{3}}\thanks{Corresponding Author. Address: Oesterreichische Nationalbank (OeNB). Otto-Wagner-Platz 3, 1090 Vienna, Austria. E-mail address: \texttt{\href{mailto:thomas.zoerner@oenb.at}{thomas.zoerner@oenb.at}}. The views expressed in this paper do not necessarily reflect those of the Oesterreichische Nationalbank or the Eurosystem. We gratefully acknowledge helpful comments from the participants of the RCEA conference (University of Exeter), the ICMAIF conference (University of Crete), the 2022 meeting of CEBRA (UPF Barcelona), the 44th Annual Meeting of the Norwegian Association of Economists (Stavanger), and the 25th Applied Economics Meeting (University of Toledo, Spain). In addition, we would like to thank Pavlos Petroulas and Georgios Georgiadis for excellent discussions of a previous version of the paper.}}
+
+
+%\affil{\textsuperscript{1}{University of Strathclyde}\\ %
+%\textsuperscript{2}{University of Salzburg}\\ %
+%\textsuperscript{3}{Oesterreichische Nationalbank (OeNB)}\\
+	%\textsuperscript{3}{Vienna University of Economics and Business}
+% }
+
+\date{}
+
+
+%%% Revision markup (July 2026): all changes relative to the submitted version are typeset in red.
+%%% Set \revisionmodefalse (or define \rev as identity) to remove the markup for the final version.
+\newcommand{\rev}[1]{\textcolor{red}{#1}}
+%%% \sug{} = blue suggestion (proposed wording / calibration for discussion, not yet adopted)
+\newcommand{\sug}[1]{\textcolor{blue}{#1}}
+
+\providecommand{\keywords}[1]{\vspace{1.5em}\textbf{Keywords:} Monetary Policy Transmission, Financial Markets, Real Rates,  High-Frequency Data, Smooth Transition VAR \hspace{0.5cm} #1}
+\providecommand{\codes}[1]{\vspace{0.3em}\textbf{JEL Codes:} E43, E52, F42, G12\hspace{0.4cm} #1}
+\newcommand\given[1][]{\:#1\vert\:}
+
+\makeatletter
+\renewenvironment{thebibliography}[1]
+         {\section*{\refname}%
+          \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+          \list{\@biblabel{\@arabic\c@enumiv}}%
+               {\settowidth\labelwidth{\@biblabel{#1}}%
+                \leftmargin\labelwidth
+                \advance\leftmargin\labelsep
+                \@openbib@code
+                \usecounter{enumiv}%
+                \let\p@enumiv\@empty
+                \itemsep=7.5pt
+                \parsep=0pt
+                \leftmargin=\parindent
+                \itemindent=-\parindent
+                \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+          \sloppy
+          \clubpenalty4000
+          \@clubpenalty \clubpenalty
+          \widowpenalty4000%
+          \sfcode`\.\@m}
+         {\def\@noitemerr
+           {\@latex@warning{Empty `thebibliography' environment}}%
+          \endlist}
+\makeatother
+\def\equationautorefname~#1\null{%
+  Eq.~(#1)\null
+}
+% Same for autoref equation
+\def\equationautorefname~#1\null{
+Eq.~(#1)\null
+}
+% Changes Figure to Fig. nr 
+\renewcommand{\figurename}{Figure}
+\renewcommand*{\figureautorefname}{Figure}
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Section}
+\renewcommand{\appendixautorefname}{Appendix}
+%Caption display style
+\captionsetup{figurename=Figure,tablename=Table}
+
+               
+
+% paragraph spacing
+\setlength{\parskip}{0em}
+\setlength{\parindent}{1.5em}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract} 
+\noindent 
+The secular increase in globalization led to a substantial increase in the interconnectedness of global financial markets. This has important implications for the conduct of monetary policy, as central bank policies may diverge across countries, potentially affecting key transmission channels of domestic policy actions. In this paper, we use a non-linear multivariate time series model to shed light on how the US monetary policy stance affects the conduct of monetary policy in the euro area. We assume that the dynamic coefficients implicitly depend on a measure of the Federal Reserve's policy stance through a smooth transition function. This assumption allows us to examine how the dynamic responses of financial market quantities such as government bond yields and inflation swaps to euro area monetary policy shocks change with the US policy stance. \rev{Tracing the response of euro area yields to an ECB tightening across the full range of the Fed's stance, we find that the transmission of ECB policy through financial markets depends systematically and monotonically on that stance: the reaction is strongest when the Fed is accommodative and fades, or reverses at long maturities, as the Fed turns restrictive. This state dependence is robust to controlling for global forces (oil prices, the US dollar, and global risk aversion), is distinct from the euro area business cycle rather than an artifact of the effective lower bound period, and is estimated on a sample running through the end of 2025 whose post-pandemic tightening cycle sharpens its identification.}
+\sug{[Suggested calibration for the revision. The preliminary reduced-form evidence (\autoref{sec:passthrough}) robustly establishes that ECB surprises transmit through the term structure, but at weekly frequency it is too imprecise to identify \emph{state dependence}; that result is a finding of the structural model, not a model-free stylized fact. We therefore suggest attributing it explicitly to the model, e.g. ``Using a Bayesian smooth-transition VAR, we show that the transmission $\dots$ depends systematically on the Federal Reserve's stance,'' rather than phrasing that implies the pattern is already visible in simple regressions.]}
+\end{abstract}
+
+\begin{keywords} \end{keywords}
+
+\begin{codes} \end{codes}
+
+%section*{Acknowledgments}
+
+
+\clearpage
+
+
+
+
+\doublespacing
+\renewcommand{\thepage}{\arabic{page}}
+% \setcounter{page}{1}
+
+
+% Input blocks
+\input{1_introduction_updated}
+
+\input{2_framework_updated}
+
+\input{3_data_updated}
+
+\input{4_results_updated}
+
+\input{5_conclusio_updated}
+
+\section*{Conflicts of Interest}
+The authors have no relevant financial or non-financial interests to
+disclose.
+
+% Bibliography
+\newpage
+\small{\scfont\setstretch{0.85}
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{custom.bst}
+\bibliography{lit_updated}}
+
+\clearpage % ensure all floats are processed
+%\processdelayedfloats
+
+% Appendices
+\begin{appendices}
+
+\setcounter{equation}{0}
+\renewcommand\theequation{A.\arabic{equation}}
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+
+\section{Data}\label{app:0}
+\input{appendix/0_Data_updated}
+\newpage
+\section{Further empirical results}\label{app:A}
+\input{appendix/1_add_res_updated}
+
+\clearpage
+\section{Robustness Checks}\label{app:rob}
+\input{appendix/2_robust_updated}
+
+\clearpage
+\section{Technical appendix}\label{app:B}
+\input{appendix/2_technical_updated}
+
+
+\end{appendices}
+
+%\appendix
+
+
+
+
+\end{document}
+

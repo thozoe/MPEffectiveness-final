@@ -1,0 +1,47 @@
+\section{Econometric Framework}\label{sec:framework}
+
+Our objective is to investigate whether the effects of the ECB's monetary policy depend on the Federal Reserve's policy stance. \rev{To capture high-frequency dynamics in the financial sector, together with the role of inflation expectations, we employ a multivariate time series model of weekly data on government bond yields, inflation-linked swaps, and a set of macro-financial variables.}
+%\footnote{In the subsequent analysis, we use \textit{inflation expectations} and \textit{swaps} interchangeably.} 
+In this section, we explain the term structure model used to obtain the yield and inflation swap curve factors. We then introduce our smooth transition VAR model.
+
+\subsection{Nelson-Siegel term-structure model}
+
+\rev{We aim to capture how monetary policy transmission varies across the maturities of yields and inflation swaps. Modelling each maturity separately would involve a large number of time series and invite overfitting.} As a remedy, we propose a parsimonious term structure model in the Nelson-Siegel (NS) tradition \citep{nelson1987parsimonious, DIEBOLD2006337, boraugan2020term} for both bond yields and inflation swaps. 
+
+Let $j\in \{r,\pi\}$, where $r_{t}(\tau)$ denotes the weekly EA government bond yield and $\pi_{t}(\tau)$ the weekly inflation-linked swap, both with maturity $\tau$. Assuming that both the EA yield curve and the respective inflation swap curve feature a factor structure, yields
+\begin{equation}\label{eq:NSfactors}
+j_{t}(\tau) = L_{j t} + S_{j t}  \left( \frac{1-\exp \left(-\zeta_{j} \tau \right)}{\zeta_{j} \tau}\right) + C_{jt} \left( \frac{1-\exp \left( -\zeta_{j} \tau \right)}{\zeta_{j} \tau} - \exp \left(-\zeta_{j} \tau \right) \right), 
+\end{equation}
+with $L_{jt}$, $S_{jt}$ and $C_{jt}$ denoting a level, slope and curvature factor, which summarizes movements along the  yield curve. The corresponding factor loadings depend on a parameter $\zeta_j$, implying an exponential decay rate. The factors feature a convenient economic meaning. While the level factor  defines the \rev{behaviour} at the long end of the yield curve (long-run level of interest rates, maturities greater than 15 years), the slope factor determines the relationship between short and long-run interest rates. Finally, the curvature factor defines the \rev{behaviour} in the medium segment of the curve and can be interpreted as the relationship of bond prices to changes in yields. 
+
+According to \cite{boraugan2020term} the resulting three factors for the inflation-linked swap curve have a similar convenient interpretation. The level factor, $L_{\pi t}$ simply captures the long-term inflation expectations, while the slope factor, $S_{\pi t}$ denotes the difference between long- and short-term expectations. Finally, the curvature factor, $C_{\pi t}$ is a measure of medium-term expectations relative to short- and long-term expectations. 
+
+%Similarly, we use a NS model to summarize movements along the inflation swap curve:
+%\begin{equation*}
+%\pi_{t}(\tau) = L_{\pi t} + S_{\pi t}  \left( \frac{1-\exp \left(-\zeta_{\pi} %\tau \right)}{\zeta_{\pi} \tau}\right) + C_{\pi t} \left( \frac{1-\exp \left( %-\zeta_{\pi} \tau \right)}{\zeta_{\pi} \tau} - \exp \left(-\zeta_{\pi} \tau %\right) \right).
+%\end{equation*}
+Following \cite{DIEBOLD2006337}, we set $\zeta_r = \zeta_{\pi} = 0.0609 \times 12$, rendering the loadings as known and deterministic. This feature enables us to obtain the six latent factors in $\bm f_t = (L_{rt}, S_{rt}, C_{rt}, L_{\pi t}, S_{\pi t}, C_{\pi t})'$ with simple period-specific cross-sectional Ordinary Least Square (OLS) regressions on the yield and the inflation swap data, respectively.
+
+
+\subsection{A nonlinear model of monetary policy spillovers}
+\rev{To model the EA economy in a nonlinear fashion, we collect the term structure factors $\bm f_t$ and the additional macro-financial quantities in an $M\times 1$ vector $\bm y_t$, which we assume to evolve according to a smooth transition VAR model} \citep{terasvirta1992characterizing, weise1999asymmetric, gefang2009nonlinear, hubrich2013STVAR}:
+\begin{equation}\label{eq:STVAR}
+\begin{aligned}
+    \bm{y}_t = &\left(\bm c_{1} + \bm \gamma_{1} z_{t} + \sum_{p = 1}^{P} \bm{A}_{1p} \bm{y}_{t-p} \right)\times S_t + \\
+    &\left(\bm c_{0} + \bm \gamma_{0} z_{t} + \sum_{p = 1}^{P} \bm{A}_{0p} \bm{y}_{t-p} \right)\times \left(1- S_t \right) + \bm \varepsilon_t,
+\end{aligned}
+\end{equation}
+with $\bm c_k$ denoting a regime specific intercept (for $k \in \{0,1\}$),  
+ $\bm \gamma_k$ is an $M$-dimensional vector measuring the impact of a monetary policy surprise $z_t$ in the domestic economy, $\bm{A}_{ip}$ are $M \times M$-dimensional coefficient matrices with lag $p=1,...,P$ while $\bm \varepsilon_t$ denotes an $M$-dimensional vector of Gaussian shocks with zero mean and $M\times M$-dimensional variance-covariance matrix $\bm \Sigma$. \rev{In short, the model combines two linear VARs, with each regime corresponding to either an expansionary or a contractionary Fed policy stance.}
+
+ The scalar $S_t$, which governs the transition between the two regimes, is defined by a nonlinear function $g$ that is bounded between zero and unity and includes the monetary policy stance abroad as an input variable, $S_t = g(z^{\ast}_{t})$. We assume that this transition process is smooth and defined by a first-order logistic function: 
+\begin{equation}\label{eq:St}
+g(z^{\ast}_{t}) = \frac{1}{1+\exp\{-\rho (z^{\ast}_{t} - \mu)\}},   
+\end{equation}
+where the adjustment process depends on a latent threshold parameter $\mu$ and a non-negative speed of adjustment parameter $\rho$. Note that the input variable $z^{\ast}_{t}$ enters the specification in \autoref{eq:St} contemporaneously, which supports the notion that the Fed responds only to domestic factors. Thus, the Fed's monetary policy stance can be considered exogenous to the ECB's monetary policy, following the findings of \cite{ca2020monetary} and the literature on the global role of US monetary policy \citep{miranda2020us}.
+
+\rev{The model is flexible and allows for a nonlinear interaction between the domestic dynamics in $\bm y_t$ and the foreign monetary policy stance $z_t^\ast$. We standardise $z^{\ast}_{t}$ to have zero mean and unit variance.}  Our choice of the switching function is motivated by its broad empirical support \citep[see, e.g.,][]{terasvirta1994specification} but also by the fact that it nests models with constant parameters as well as models with abrupt regime shifts. \rev{As $\rho$ grows large, $g$ approaches a Heaviside step function and the model collapses to a threshold specification that switches abruptly when $z_t^\ast$ crosses $\mu$; when $\rho$ is small, the adjustment across regimes is smooth and slow. This lets us remain agnostic a priori about the exact specification---threshold versus smooth transition---while retaining a clear economic interpretation. Because $g$ is monotonically increasing in $z_t^\ast$, the two regimes correspond to loose and tight US monetary policy. Unlike a pure threshold model, in which each regime has distinct dynamics, our specification treats the euro area dynamics as a mixture of the tight- and loose-stance regimes, with weights that depend on $z_t^\ast$.}
+
+\rev{Because the model is heavily parameterised and highly nonlinear, we adopt a Bayesian approach to estimation.} Therefore, we specify appropriate priors for all parameters of the model based on extensive support from the literature on nonlinear time series models. For the sake of brevity, we simply state the corresponding priors verbally and refer to the technical appendix \autoref{app:prior} for more details. For the VAR coefficients, we use a Horseshoe prior \citep{carvalho2010horseshoe}, which shrinks irrelevant coefficients towards zero and thus significantly reduces the estimation uncertainty. The prior specification of the variance-covariance matrix follows an inverted Wishart distribution and is therefore standard. 
+Moreover, the prior choice of the parameters governing the state transition ensures a sensible state allocation, with both regimes clearly separated. That is, the threshold parameter follows a weakly informative uniform distribution, while we impose a Gamma prior on the speed of adjustment parameter. The hyperparameters for the latter are set so that the transition between the two states is relatively fast. 
+Applying Bayes' theorem and combining the prior with the model's likelihood function yields the posterior distributions. Since the full posterior distribution is of non-standard form, we use a Markov Chain Monte Carlo (MCMC) algorithm, described in detail in \autoref{app:mcmc}, to simulate from it.
