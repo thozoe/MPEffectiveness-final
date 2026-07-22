@@ -1,5 +1,8 @@
 \subsection{Robustness results based on a different monetary policy instrument}
-In this subsection, we provide additional results to the robustness checks discussed in \autoref{sec:results_rob}. We follow the specification from \autoref{sec:framework} but use the monetary policy instruments compiled by \cite{jarocinski2020deconstructing} instead. The estimation specification and the prior setup remain unchanged.
+%% [2026-07-22] NOTE: like the retired main-text robustness section, everything in this appendix
+%% rests on the old data vintage and the pre-correction sampler. To be rebuilt after the new
+%% robustness runs; no number here is verified.
+In this subsection, we provide additional results to the robustness checks. We follow the specification from \autoref{sec:framework} but use the monetary policy instruments compiled by \cite{jarocinski2020deconstructing} instead. The estimation specification and the prior setup remain unchanged.
 
 \begin{figure}[!htpb]
 \caption{Impulse responses of a restrictive EA monetary policy shock for selected government bond yields. \label{fig:IRFylds_jaro}} 
@@ -92,7 +95,7 @@ b) One-week-ahead ($h = 1$) responses for a continuum of scenarios
 
 {\color{red}
 \subsection{Lag length and real activity controls}
-Both exercises in this subsection address the persistence discussion in \autoref{sec:persistence}. \autoref{fig:IRFlag8} reports the yield responses when the lag length is doubled from $p=4$ to $p=8$ weeks, and \autoref{fig:IRFwei} shows the responses from a specification that adds the (weekly) German activity index to $\bm y_t$, thereby allowing for feedback between financial markets and real activity at the weekly frequency. In both cases, the responses --- and in particular the differences across US policy regimes --- are very close to the baseline results, indicating that neither the lag order nor the absence of a real activity control drives the shape or the speed of mean reversion of the estimated responses.
+Both exercises in this subsection address the persistence \rev{of the estimated responses (see also the level responses in \autoref{fig:IRFcum})}. \autoref{fig:IRFlag8} reports the yield responses when the lag length is doubled from $p=4$ to $p=8$ weeks, and \autoref{fig:IRFwei} shows the responses from a specification that adds the (weekly) German activity index to $\bm y_t$, thereby allowing for feedback between financial markets and real activity at the weekly frequency. In both cases, the responses --- and in particular the differences across US policy regimes --- are very close to the baseline results, indicating that neither the lag order nor the absence of a real activity control drives the shape or the speed of mean reversion of the estimated responses.
 
 \begin{figure}[!htpb]
 \caption{\rev{Impulse responses of government bond yields with $p=8$ lags.}\label{fig:IRFlag8}}
@@ -113,7 +116,7 @@ Both exercises in this subsection address the persistence discussion in \autoref
 \end{figure}
 
 \subsection{Additional figures for the new exercises in Sections 4.5--4.8}
-For completeness, the replication material contains the full set of results (inflation swaps, real rates, macro-financial variables, one-week-ahead scenario continua, and peak-response summaries) for every specification introduced in the revision: the global-variable model (\autoref{sec:global}), the purged-stance model, the euro area cycle threshold and the sign-split estimations (\autoref{sec:confound}), and the full-sample analysis of the recent divergence episode (\autoref{sec:extended}). \autoref{fig:IRFsign} summarizes the sign-split evidence: the yield responses conditional on the Fed's stance retain the same ordering when the model is estimated using only restrictive (left) or only expansionary (right) surprises.
+For completeness, the replication material contains the full set of results (inflation swaps, real rates, macro-financial variables, one-week-ahead scenario continua, and peak-response summaries) for every specification introduced in the revision: the global-variable model, the purged-stance model, the euro area cycle threshold and the sign-split estimations, and the full-sample analysis of the recent divergence episode (\autoref{sec:extended}). \autoref{fig:IRFsign} summarizes the sign-split evidence: the yield responses conditional on the Fed's stance retain the same ordering when the model is estimated using only restrictive (left) or only expansionary (right) surprises.
 
 \begin{figure}[!htpb]
 \caption{\rev{Sign-split estimations: yield responses using only tightening vs. only easing surprises.}\label{fig:IRFsign}}

@@ -8,8 +8,120 @@
 % \end{figure}
 
 
+\begin{figure}[!htpb]
+\centering
+\caption{\rev{One-week-ahead response of the full government bond yield curve to a restrictive ECB surprise, across all percentiles of the Fed's monetary policy stance.}\label{fig:continuumheat}}
+\includegraphics[width=\textwidth]{images_updated/rev/IRF_termstructure_continuum.pdf}
+\caption*{\footnotesize \textit{Notes:} \rev{Posterior median of the one-week-ahead ($h=1$) response (in basis points, colour scale) of the government bond yield at each maturity (horizontal axis, 1--30 years) to a one-standard-deviation restrictive ECB surprise, evaluated at each percentile of the US monetary policy stance $z^\ast_t$ (vertical axis; 0 = most accommodative, 100 = most restrictive week in the sample). The solid contour delimits the region in which the $68\%$ posterior credible set no longer excludes zero (upper right); the dotted horizontal line marks the percentile at which the stance crosses zero, i.e., the calibrated regime threshold. Responses at maturities between the 15 estimated grid points are linearly interpolated. Estimated on the nominal system over the full sample, 2005:W1--2025:W52 (specification \texttt{main}). This figure complements \autoref{fig:headline} in the main text.}}
+\end{figure}
+
+%% [2026-07-22] moved here from the main text: exchange rate, equities and systemic stress.
+{\color{red}
+\subsection*{Exchange rate, equities, and systemic stress}
+
+Besides bond yields and inflation swaps, our system contains the euro--dollar exchange rate, euro
+area stock prices, and the composite indicator of systemic stress (CISS). \autoref{fig:IRFOTHER}
+reports their responses under the two reference stances of the Fed, together with the difference
+between the two.
+
+Starting with the exchange rate, a contractionary euro area policy shock should, other things equal,
+appreciate the euro \citep{eichenbaum1995FX}. It does so in both regimes, but the magnitude depends
+on the Fed's stance: the euro appreciates by about $0.23$ percent on impact when the Fed is
+accommodative, against roughly $0.10$ percent when it is restrictive, and the impact-week difference
+is significant at the $68\%$ level. Equity prices fall on impact in both regimes --- the sign is
+imposed by the poor man's sign restriction that separates policy from information shocks --- and the
+decline is again about twice as large under an accommodative Fed ($-0.5$ against $-0.25$ percent),
+with a significant impact-week difference and mean reversion within about three weeks. Both variables
+therefore corroborate the yield-curve evidence from an independent direction: when the Fed is loose,
+an ECB surprise moves the transatlantic rate differential more strongly, and that sharper repricing
+passes through to the currency, as the widening differential attracts inflows, and to equities, via
+the larger revision in discount rates.
+
+The systemic stress indicator behaves differently. The CISS rises after a restrictive surprise in
+both regimes, but by more, and more persistently, when the Fed is \textit{restrictive} --- the
+opposite ordering to every other variable in the system. The credible sets are wide and we do not
+want to lean on the difference, but the sign is economically sensible: a domestic tightening that
+arrives on top of an already tight global financial environment adds to funding stress, whereas the
+same surprise under an accommodative Fed is cushioned by ample global liquidity. Note also that,
+since we use only triple-A rated sovereign bonds, safe-haven motives within the euro area play
+little role in these results.}
+
+\begin{figure}[!htpb]
+\caption{Impulse responses of a restrictive EA monetary policy shock for other quantities.\label{fig:IRFOTHER}}
+\begin{minipage}{\textwidth}
+\centering
+a) Responses for two scenarios of US monetary policy
+\end{minipage}
+\begin{minipage}{\textwidth}
+\centering
+\includegraphics[width= \textwidth]{images_updated/DIFF_EA_Motto/IRFOTHERS_LH.pdf}
+\end{minipage}
+\begin{minipage}{\textwidth}
+\centering
+b) Difference in responses
+\end{minipage}
+\begin{minipage}{1\textwidth}
+\centering
+\includegraphics[width= \textwidth]{images_updated/DIFF_EA_Motto/IRFOTHERS_D.pdf}
+\end{minipage}
+\caption*{\footnotesize \textit{Notes:} Panel (a) plots the responses to a contractionary monetary policy shock in the EA conditional on two scenarios: A restrictive US monetary policy stance (95$\%$ percentile of the threshold, colored in red) and an expansionary US monetary policy stance (5$\%$ percentile of the threshold, colored in blue). Panel (b) plots the differences between the two US regimes (restrictive minus expansionary stance). In both panels, the horizontal axis indicates the weeks following the shock. The shaded areas denote the $68\%$ posterior credible set and the solid line denotes the posterior median. FX denotes the Euro per one US-dollar (i.e., a decrease denotes an appreciation of the Euro), Stocks the Euro Stoxx 50 index, and CISS the Composite Index of Systemic Stress. \rev{Estimated over the full sample, 2005:W1--2025:W52 (specification \texttt{main}).}}
+\end{figure}
+
+\rev{The following three figures complement the dynamic analysis of \autoref{sec:results}. \autoref{fig:IRFswps} and \autoref{fig:IRFreal} report the dynamic responses of inflation swaps and real yields under the two reference stances of the Fed, whose one-week-ahead behaviour across the full stance continuum is summarized in \autoref{fig:headline} in the main text. The swap responses are an order of magnitude smaller than the yield responses and, beyond the impact week, the differences across Fed regimes are imprecisely estimated; the real-yield dynamics closely track the nominal ones. \autoref{fig:IRFcum} accumulates the weekly yield responses and displays the implied \textit{level} effects: since the model is specified in first differences of the term structure factors, a differenced response that returns to zero does not mean the effect on yields disappears, but that yields settle at a new level. Under an accommodative Fed, yields of three years and above settle about two basis points higher and the effect does not unwind over the 26-week horizon; under a restrictive Fed no lasting level effect remains, and the cumulated response of the one-year yield even drifts slightly negative --- the level counterpart of the short-end reversal discussed in the main text.}
+
+\begin{figure}[!htpb]
+\caption{\rev{Impulse responses of a restrictive EA monetary policy shock for selected inflation swaps.}\label{fig:IRFswps}}
+\begin{minipage}{\textwidth}
+\centering
+a) Responses for two scenarios of US monetary policy
+\end{minipage}
+\begin{minipage}{\textwidth}
+\centering
+\includegraphics[width= 0.7\textwidth]{images_updated/DIFF_EA_Motto/IRF_INFSWP_LH_SLCT.pdf}
+\end{minipage}
+\begin{minipage}{\textwidth}
+\centering
+b) Difference in responses
+\end{minipage}
+\begin{minipage}{1\textwidth}
+\centering
+\includegraphics[width= 0.7\textwidth]{images_updated/DIFF_EA_Motto/IRF_INFSWP_D_SLCT.pdf}
+\end{minipage}
+\caption*{\footnotesize \textit{Notes:} \rev{Responses of inflation-linked swap rates to a contractionary EA monetary policy shock conditional on a restrictive US stance (95\% percentile of the threshold, red) and an expansionary US stance (5\% percentile, blue); panel (b) shows the difference (restrictive minus expansionary). The horizontal axis indicates weeks after the shock; shaded areas denote the 68\% posterior credible set. Estimated over the full sample, 2005:W1--2025:W52 (specification \texttt{main}).}}
+\end{figure}
+
+\begin{figure}[!htpb]
+\caption{\rev{Impulse responses of a restrictive EA monetary policy shock for selected real rates.}\label{fig:IRFreal}}
+\begin{minipage}{\textwidth}
+\centering
+a) Responses for two scenarios of US monetary policy
+\end{minipage}
+\begin{minipage}{\textwidth}
+\centering
+\includegraphics[width= 0.7\textwidth]{images_updated/DIFF_EA_real_Motto/IRF_YLDS_LH_SLCT.pdf}
+\end{minipage}
+\begin{minipage}{\textwidth}
+\centering
+b) Difference in responses
+\end{minipage}
+\begin{minipage}{1\textwidth}
+\centering
+\includegraphics[width= 0.7\textwidth]{images_updated/DIFF_EA_real_Motto/IRF_YLDS_D_SLCT.pdf}
+\end{minipage}
+\caption*{\footnotesize \textit{Notes:} \rev{Responses of real yields (computed draw-wise as the nominal yield response minus the corresponding inflation swap response) to a contractionary EA monetary policy shock, conditional on a restrictive US stance (95\% percentile, red) and an expansionary US stance (5\% percentile, blue); panel (b) shows the difference. Shaded areas denote the 68\% posterior credible set. Estimated over the full sample, 2005:W1--2025:W52 (specification \texttt{main}).}}
+\end{figure}
+
+\begin{figure}[!htpb]
+\caption{\rev{Cumulated (level) responses of government bond yields to a restrictive EA monetary policy shock.}\label{fig:IRFcum}}
+\begin{minipage}{\textwidth}
+\centering
+\includegraphics[width=0.85\textwidth]{images_updated/rev/IRF_YLDS_CUM_LH_SLCT.pdf}
+\end{minipage}
+\caption*{\footnotesize \textit{Notes:} \rev{Cumulated impulse responses (implied level effects, in percentage points) under a restrictive (95\% percentile, red) and an expansionary (5\% percentile, blue) US monetary policy stance, over the 26-week horizon. Shaded areas denote the 68\% posterior credible set. Estimated over the full sample, 2005:W1--2025:W52 (specification \texttt{main}).}}
+\end{figure}
+
 \begin{figure}[!htbp]
-\caption{Peak responses of a restrictive EA monetary policy shock for a set of US monetary policy scenarios.\label{fig:IRFpeaks}} 
+\caption{Peak responses of a restrictive EA monetary policy shock for a set of US monetary policy scenarios.\label{fig:IRFpeaks}}
 \begin{minipage}{\textwidth}
 \centering
 a) Full yield curve
