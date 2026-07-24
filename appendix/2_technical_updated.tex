@@ -12,7 +12,7 @@ The prior specification on the variance-covariance $\bm \Sigma$ is standard. Her
 with the scalar $d_0$ denoting the prior degrees of freedom and the $M\times M$-dimensional matrix $\bm D_0$ referring to the prior scaling. In the empirical application, we specify $d_0 = M+2$ and \rev{$\bm D_0 = 10^{-10}\,\bm I_M$. This choice keeps the prior proper while leaving it essentially uninformative, so that the posterior of $\bm \Sigma$ is determined by the likelihood.}
 
 To complete our proposed setup, we also need to specify the treatment of the hyperparameters $\mu$ and $\rho$, which define the transition between the two regimes.
-\rev{Both are calibrated, and we document why. The threshold parameter is fixed at
+\rev{The two are treated differently, and we document why. The threshold parameter is fixed at
 \begin{equation*}
     \mu = 0,
 \end{equation*}
@@ -21,7 +21,7 @@ On the speed of adjustment parameter $\rho$ we impose a Gamma prior:
 \begin{equation*}
     \rho \sim \mathcal{G}(s_0, s_1),
 \end{equation*}
-with the hyperparameters \rev{$s_0=4/0.001$ and $s_1=1/0.001$ (prior mean $4$, prior standard deviation $0.06$)} chosen such that the transition between the two states occurs relatively fast. This informative choice ensures a sensible state allocation\rev{, with the clearly expansionary and clearly restrictive episodes well separated while the transition periods between them are smooth} (see also \autoref{fig:stallo} for the estimated state allocation). \rev{Centering the prior at $7$ instead of $4$ leaves the state allocation and all impulse responses virtually unchanged; like $\mu$, the transition speed is deliberately calibrated, as the likelihood is uninformative about $\rho$.}
+with the hyperparameters \rev{$s_0=4/0.001$ and $s_1=1/0.001$ (prior mean $4$, prior standard deviation $0.06$)} chosen such that the transition between the two states occurs relatively fast. This informative choice ensures a sensible state allocation\rev{, with the clearly expansionary and clearly restrictive episodes well separated while the transition periods between them are smooth} (see also \autoref{fig:stallo} for the estimated state allocation). \rev{Unlike $\mu$, $\rho$ is sampled rather than fixed; the prior is nonetheless deliberately tight, because the likelihood turns out to be close to flat in $\rho$, so that its posterior largely reproduces the prior. Centering that prior at $7$ instead of $4$ shifts the posterior median accordingly, from $3.99$ to $6.99$, but leaves the state allocation and all impulse responses virtually unchanged (correlation of posterior median responses $0.998$, maximum deviation $0.17$ basis points).}
 
 \subsection{Posterior quantities and sampling algorithm}\label{app:mcmc}
 Next, we outline the main steps of our Markov Chain Monte Carlo (MCMC) algorithm, which is used to simulate from the full posterior distribution. To obtain the conditional posteriors, we combine the priors with the likelihood of the model, as described in \autoref{eq:STVAR} and \autoref{eq:St}. For most parameters, this leads to well-known conditional distributions, and simulating from them is straightforward. Let the symbol $\bullet$ indicate that we condition on the remaining parameters of the system, then these sampling steps read as follows: 
