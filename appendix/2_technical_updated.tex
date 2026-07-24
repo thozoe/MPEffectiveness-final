@@ -26,7 +26,7 @@ with the hyperparameters \rev{$s_0=4/0.001$ and $s_1=1/0.001$ (prior mean $4$, p
 \subsection{Posterior quantities and sampling algorithm}\label{app:mcmc}
 Next, we outline the main steps of our Markov Chain Monte Carlo (MCMC) algorithm, which is used to simulate from the full posterior distribution. To obtain the conditional posteriors, we combine the priors with the likelihood of the model, as described in \autoref{eq:STVAR} and \autoref{eq:St}. For most parameters, this leads to well-known conditional distributions, and simulating from them is straightforward. Let the symbol $\bullet$ indicate that we condition on the remaining parameters of the system, then these sampling steps read as follows: 
 \begin{enumerate}
-    \item For simplicity we collect all VAR coefficients in a $2K$-dimensional vector $\bm a = (\bm a_1', \bm a_0')'$ and define the corresponding $2K$-dimensional vector of predictors $\bm x_t = \left((1, z_t, \bm y_{t-1}', \dots, \bm y_{t-p}')\times S_t,  (1, z_t, \bm y_{t-1}', \dots, \bm y_{t-p}') \times (1-S_t)\right)'$. 
+    \item For simplicity we collect all VAR coefficients in a $2K$-dimensional vector $\bm a = (\bm a_1', \bm a_0')'$ and define the corresponding $2K$-dimensional vector of predictors $\bm x_t = \left((1, \bm y_{t-1}', \dots, \bm y_{t-p}')\times S_t,  (1, \bm y_{t-1}', \dots, \bm y_{t-p}') \times (1-S_t)\right)'$. 
     In what follows, we sample $\bm a$ from a multivariate Gaussian distribution: 
     \begin{equation*}
         \bm a|\bullet \sim \mathcal{N}\left(\bar{\bm a}, \bar{\bm V} \right),
