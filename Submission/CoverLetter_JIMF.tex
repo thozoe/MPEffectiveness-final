@@ -6,10 +6,12 @@
 \usepackage{setspace}
 \usepackage{pdfpages}
 
-\definecolor{oenbcolor}{HTML}{003366} 
+\definecolor{oenbcolor}{HTML}{003366}
 
 %\definecolor{plusgreen}{RGB}{26,76,57}
 \definecolor{mygray}{gray}{0.6}
+\definecolor{dared}{RGB}{156,30,61}
+\definecolor{boblue}{RGB}{0,0,128}
 \usepackage[bookmarks=true, bookmarksopen=true, colorlinks,
                         linkcolor = boblue,
             urlcolor  = boblue,
@@ -19,8 +21,6 @@
 \usepackage{enumitem} % Enumerate with [resume] option
 \usepackage{sectsty} % Custom section fonts
 \usepackage{natbib}
-\definecolor{dared}{RGB}{156,30,61}
-\definecolor{boblue}{RGB}{0,0,128}
 
 \usepackage{amssymb}
 \usepackage{amsbsy}
@@ -47,7 +47,7 @@
 \def\job{Senior Research Economist}
 % To whom (recipient)
 \def\addressone{To the Editors,}
-\def\addresstwo{\textit{Journal of Economic Dynamics and Control}}
+\def\addresstwo{\textit{Journal of International Money and Finance}}
 
 % Further information on sender
 \def\email{\href{mailto:thomas.zoerner@oenb.at}{thomas.zoerner@oenb.at}}
@@ -55,7 +55,7 @@
 \def\phone{+43 1 404 20-5215}
 
 
-\def\regards{Submission of the Manuscript "Financial Complexity, Cycles and Income Inequality"}
+\def\regards{Submission of the Manuscript ``Hawks vs.\ Doves: The Fed's Stance and the Term Structure of ECB Policy Transmission''}
 
 \hypersetup{
     pdftitle={Letter: \regards},
@@ -80,7 +80,7 @@ top=2.5cm
 \fancyfoot[]{}
 \fancyhead[C]{\small--\thepage--}
 \fancyfoot[L]{\scriptsize\textcolor{mygray}{\sffamily
-Postdoctoral Researcher \quad T +43 1 505 72 72 - 176 \quad maximilian.boeck@unibocconi.it \\ Universit\`{a} Bocconi \quad Via Roentgen 1 \quad 20136 Milano/Lombardia \quad Italy
+Oesterreichische Nationalbank \quad Senior Research Economist \quad Email: thomas.zoerner@oenb.at \\ Monetary Policy Section \quad Otto-Wagner-Platz 3 \quad 1090 Vienna \quad Austria \quad https://www.oenb.at
 }}
 \setlength{\headheight}{15pt}
 
@@ -95,16 +95,17 @@ Oesterreichische Nationalbank \quad Senior Research Economist \quad Email: thoma
 
 %--- END Headers & Footers
 
-% Don't indent paragraphs.
+% Don't indent paragraphs; separate them with vertical space instead.
 \setlength\parindent{0em}
+\setlength\parskip{0.6em}
 
 \begin{document}
 \thispagestyle{plain}
-\vspace*{-6em}
+\vspace*{-7.5em}
 \begin{minipage}[t][][b]{0.6\textwidth}
-\vspace*{5em}
-\titlepre\textbf{\name}\titlepost\\\job\\\email\\\website\\[4em]
-\addressone\\\addresstwo\\[3em]
+\vspace*{3.5em}
+\titlepre\textbf{\name}\titlepost\\\job\\\email\\\website\\[1.8em]
+\addressone\\\addresstwo\\[1.2em]
 %\addressone\\\addresstwo\\\phone\\[3em]
 \end{minipage}
 \hfill
@@ -114,37 +115,34 @@ Oesterreichische Nationalbank \quad Senior Research Economist \quad Email: thoma
 \hspace*{2.25em}\begin{minipage}[t][][b]{\textwidth}
 \textcolor{oenbcolor}{\rule{1.25cm}{3pt}}\\[1em]
 %\sffamily\textbf{Oesterreichische Nationalbank}
-\\[3em]
+\\[1.5em]
 
 
 \textrm{\normalsize{Vienna, \today}}
 \end{minipage}
 \end{scriptsize}
-\end{minipage}\vspace*{1em}
+\end{minipage}\vspace*{0em}
 
-\textbf{\regards}\\
+\textbf{\regards}
 
-\vspace{0.6cm}
+\noindent Dear Editors,
 
-\noindent Dear Editors, \\
+Please find attached our manuscript \textit{Hawks vs.\ Doves: The Fed's Stance and the Term Structure of ECB Policy Transmission}, co-authored with Niko Hauzenberger (University of Strathclyde) and Florian Huber (University of Salzburg), which we submit for your consideration for publication in the \textit{Journal of International Money and Finance}.
 
-Please find attached our submission titled \textit{Financial Complexity, Cycles and Income Inequality} for your consideration for publication in the \textit{Journal of Economic Dynamics and Control}. \\
+The paper asks whether the transmission of ECB monetary policy to euro area financial markets depends on the policy stance of the Federal Reserve --- a question a linear model cannot pose, since there the propagation of a domestic shock is invariant to the foreign policy environment by construction. We estimate a Bayesian smooth transition VAR on weekly euro area data for 2005--2025, in which the dynamic coefficients vary continuously with the deviation of the federal funds rate from the US natural rate, and trace the response of the entire term structure to high-frequency identified ECB surprises across the full range of the Fed's stance.
 
-In this paper, we introduce a banking sector and heterogeneous agents in the dynamic overlapping generations model of Matsuyama et al. (2016, JET). Our model captures the benefits and costs of an advanced banking system. While it allocates resources to productive activities, it can also hinder progress if it invests in projects that do not contribute to capital formation, and potentially triggering instabilities due to the emergence of cycles. Our intergenerational dynamic framework demonstrates that income inequality between agents increases during recessions, aligning with empirical observations. Moreover, we identify both changes in production factor prices and the reallocation of agents across occupations as driving factors behind the increased inequality. The current version of the manuscript has significantly benefited from the incorporation of feedback from anonymous experts in the field.\\
+Our central result is that the Fed's stance does not scale ECB transmission up or down --- it \textit{rotates} it. Under an accommodative Fed, a contractionary ECB surprise raises euro area yields by a similar amount along the whole curve; under a restrictive Fed, the short end responds somewhat more strongly while the long end ceases to respond at all, so that state dependence in ECB transmission is a phenomenon of the long end. At the short end the composition changes instead: inflation compensation falls about three times more when the Fed is restrictive, so that real short-term financing conditions tighten by considerably more than nominal yields suggest. The sign and the maturity profile are robust to how the stance is measured, how the surprise is identified, and how the regime boundary is calibrated.
 
-This manuscript has not been published and is not under consideration for publication elsewhere. Thank you for your consideration, and I look forward to your response. \\
+The paper sits at the intersection of international monetary policy spillovers, high-frequency identification and the term structure, and speaks to a question the post-pandemic Fed--ECB divergence has made concrete: whether a central bank's grip on its own transmission depends on what its largest counterpart is doing. We therefore believe it is well suited to your journal.
 
-\noindent Looking forward to hearing from you,\\
-sincerely yours\\
-\begin{figure}[ht]
-\includegraphics[width=0.25\textwidth]{sign.png} 
-\end{figure}
+The manuscript supersedes an earlier draft circulated under the title \textit{Hawks vs.\ Doves: ECB's Monetary Policy in Light of the Fed's Policy Stance}. It has not been published and is not under consideration elsewhere, and all authors have approved the submission. The views expressed are those of the authors and not necessarily those of the Oesterreichische Nationalbank or the Eurosystem.
 
-Thomas O. Zoerner (on behalf of the authors)
+Thank you for your consideration. We look forward to hearing from you.
+
+\noindent Sincerely yours,\\[-0.5em]
+
+\noindent\includegraphics[width=0.20\textwidth]{sign.png}\\[-0.7em]
+
+\noindent Thomas O. Zoerner (on behalf of the authors)
 
 \end{document}
-
-
-
-
-

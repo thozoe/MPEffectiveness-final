@@ -21,6 +21,7 @@
 # compiled top-level documents (leading slash = repo root only, keeps images/**/*.pdf)
 /main_final.pdf
 /comparison_2026ILS_updated.pdf
+/Submission/CoverLetter_JIMF.pdf
 
 # OS / editor cruft
 .DS_Store
