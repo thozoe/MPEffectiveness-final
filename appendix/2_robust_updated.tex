@@ -8,12 +8,12 @@ median impulse responses with the baseline.
 \caption{Robustness specifications.\label{tab:robspecs}}
 \centering \footnotesize
 \resizebox{\textwidth}{!}{\input{tables/tab_rob_specs}}
-\caption*{\footnotesize \textit{Notes:} Each specification alters exactly one ingredient of the baseline and leaves the remainder unchanged. The restrictive share is the fraction of weeks with posterior mean $S_t > 0.5$. The final column is the correlation between the posterior median yield responses of the specification and those of the baseline, taken across all maturities, stance percentiles and horizons. Note that the correlation is not directly comparable for \rev{the specification that uses the \cite{jarocinski2020deconstructing} shocks}, whose surprise series is a different object with a different scale.}
+\caption*{\footnotesize \textit{Notes:} Each specification alters exactly one ingredient of the baseline and leaves the remainder unchanged. The restrictive share is the fraction of weeks with posterior mean $S_t > 0.5$. The final column is the correlation between the posterior median yield responses of the specification and those of the baseline, taken across all maturities, stance percentiles and horizons. Note that the correlation is not directly comparable for the specification that uses the \cite{jarocinski2020deconstructing} shocks, whose surprise series is a different object with a different scale.}
 \end{table}
 
 \autoref{tab:robgap} reports the state dependence itself: the difference between the response at the fifth and at the ninety-fifth percentile of the stance, and the posterior probability that this difference is positive. The sign and the maturity profile are common to every specification. The
 gap is negative at one year, indistinguishable from zero in the belly of the curve, and positive
-and increasing in maturity from ten years out\rev{; the posterior probability of a positive gap at thirty years is at least $0.88$ in seven of the eight specifications and $0.81$ in the eighth}. Its magnitude, however, varies by a factor of \rev{about two and a half} across specifications, and we accordingly make no claim about the size of the effect in the main text.
+and increasing in maturity from ten years out; the posterior probability of a positive gap at thirty years is at least $0.88$ in seven of the eight specifications and $0.81$ in the eighth. Its magnitude, however, varies by a factor of about two and a half across specifications, and we accordingly make no claim about the size of the effect in the main text.
 
 \begin{table}[!htpb]
 \caption{The state-dependence gap across specifications.\label{tab:robgap}}
@@ -22,13 +22,13 @@ and increasing in maturity from ten years out\rev{; the posterior probability of
 \caption*{\footnotesize \textit{Notes:} The gap is the one-week-ahead response at the fifth percentile of the Fed's stance less the response at the ninety-fifth percentile, in basis points per one standard deviation euro area surprise, computed draw by draw. $P(\text{gap}>0)$ is the share of posterior draws in which the gap is positive. Because the surprise is standardized within each specification, magnitudes are comparable across all columns except \texttt{jk}, whose underlying series has a standard deviation of $3.5$ rather than $5.7$ basis points; for that column the sign and the maturity profile are informative but the level is not.}
 \end{table}
 
-\autoref{tab:robrot} states the rotation directly. \rev{For each maturity it records} the highest percentile of the Fed's stance at which the response is still significantly positive; reading down a column traces the rotation, since a response that survives at every percentile at short maturities but fails beyond the fiftieth or sixtieth at long maturities is precisely a curve that pivots rather than shifts. \rev{In no specification does the long-end response turn significantly negative at any point of the stance, so the rotation is a loss of significance rather than a sign reversal.}
+\autoref{tab:robrot} states the rotation directly. For each maturity it records the highest percentile of the Fed's stance at which the response is still significantly positive; reading down a column traces the rotation, since a response that survives at every percentile at short maturities but fails beyond the fiftieth or sixtieth at long maturities is precisely a curve that pivots rather than shifts. In no specification does the long-end response turn significantly negative at any point of the stance, so the rotation is a loss of significance rather than a sign reversal.
 
 \begin{table}[!htpb]
-\caption{The rotation: \rev{significance frontier}.\label{tab:robrot}}
+\caption{The rotation:significance.\label{tab:robrot}}
 \centering \footnotesize
 \resizebox{\textwidth}{!}{\input{tables/tab_rob_rotation}}
-\caption*{\footnotesize \textit{Notes:} \rev{Entries are percentiles of the Fed's stance distribution: the highest percentile at which the sixteenth posterior quantile of the response is still above zero. A value of $100$ means the response remains significantly positive across the entire stance distribution. In no specification does the eighty-fourth quantile fall below zero at any maturity or percentile, so the response never becomes significantly negative.}}
+\caption*{\footnotesize \textit{Notes:} Entries are percentiles of the Fed's stance distribution: the highest percentile at which the sixteenth posterior quantile of the response is still above zero. A value of $100$ means the response remains significantly positive across the entire stance distribution. In no specification does the eighty-fourth quantile fall below zero at any maturity or percentile, so the response never becomes significantly negative.}
 \end{table}
 
 Finally, \autoref{fig:zetafrontier} isolates the dependence on the calibrated neutral stance. Lowering the neutral stance confines the accommodative state to more deeply accommodative weeks and widens the estimated gap; raising it has
@@ -41,7 +41,7 @@ stance.\label{fig:zetafrontier}}
 \includegraphics[width=\textwidth]{images_updated/rob/zeta_frontier.pdf}
 \caption*{\footnotesize \textit{Notes:} Posterior median (solid line) and $68\%$ credible band
 (shaded) of the loose-minus-tight gap in the one-week-ahead yield response, plotted against the
-calibrated neutral \rev{stance} $\mu$ in percentage points of the Fed's stance. The open red circle marks
+calibrated neutral stance $\mu$ in percentage points of the Fed's stance. The open red circle marks
 the baseline calibration $\mu=0$, at which the restrictive regime comprises $41.0\%$ of weeks; the
 end points $\mu=\mp0.50$ correspond to $54.6\%$ and $34.8\%$ respectively. Left panel: ten-year
 yield. Right panel: thirty-year yield.}
