@@ -1,0 +1,150 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fourier}\usepackage{helvet}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{pdfpages}
+
+\definecolor{oenbcolor}{HTML}{003366} 
+
+%\definecolor{plusgreen}{RGB}{26,76,57}
+\definecolor{mygray}{gray}{0.6}
+\usepackage[bookmarks=true, bookmarksopen=true, colorlinks,
+                        linkcolor = boblue,
+            urlcolor  = boblue,
+            citecolor = boblue,
+            anchorcolor = boblue]{hyperref}
+\usepackage{geometry}
+\usepackage{enumitem} % Enumerate with [resume] option
+\usepackage{sectsty} % Custom section fonts
+\usepackage{natbib}
+\definecolor{dared}{RGB}{156,30,61}
+\definecolor{boblue}{RGB}{0,0,128}
+
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{rotating}
+\usepackage{setspace}
+
+%--- BEGIN Formatting Title
+\usepackage{titlesec} % Allows customization of titles
+\titleformat{\section}[block]{\large\bfseries}{\thesection. }{0em}{}
+\titlespacing*{\section}{0em}{2em}{0.5em}
+%--- END Formatting Title
+%\pagenumbering{gobble}
+\setlength{\bibsep}{0pt plus 0.3ex}
+
+% Set your personal information here
+\def\name{Dr. Thomas O. Zoerner}
+\def\titlepre{}
+\def\titlepost{}
+\def\job{Senior Research Economist}
+% To whom (recipient)
+\def\addressone{To the Editors,}
+\def\addresstwo{\textit{Journal of Economic Dynamics and Control}}
+
+% Further information on sender
+\def\email{\href{mailto:thomas.zoerner@oenb.at}{thomas.zoerner@oenb.at}}
+\def\website{\href{https://www.oenb.at/Geldpolitik/Forschung/oekonominnen/thomas-zoerner.html}{Homepage}}
+\def\phone{+43 1 404 20-5215}
+
+
+\def\regards{Submission of the Manuscript "Financial Complexity, Cycles and Income Inequality"}
+
+\hypersetup{
+    pdftitle={Letter: \regards},
+    pdfauthor={\name},
+    pdfsubject={\regards},
+    pdfkeywords={Letter} {Oesterreichische Nationalbank},
+}
+
+\geometry{
+left=2.5cm,
+right=2.5cm,
+bottom=2.5cm,
+top=2.5cm
+}
+
+
+%--- BEGIN Headers & Footers
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[]{}
+\fancyfoot[]{}
+\fancyhead[C]{\small--\thepage--}
+\fancyfoot[L]{\scriptsize\textcolor{mygray}{\sffamily
+Postdoctoral Researcher \quad T +43 1 505 72 72 - 176 \quad maximilian.boeck@unibocconi.it \\ Universit\`{a} Bocconi \quad Via Roentgen 1 \quad 20136 Milano/Lombardia \quad Italy
+}}
+\setlength{\headheight}{15pt}
+
+% fist page
+\fancypagestyle{plain}{%
+        \fancyhead[]{}
+        \fancyfoot[]{}
+        \fancyfoot[L]{\scriptsize\textcolor{oenbcolor}{\sffamily
+Oesterreichische Nationalbank \quad Senior Research Economist \quad Email: thomas.zoerner@oenb.at \\ Monetary Policy Section \quad Otto-Wagner-Platz 3 \quad 1090 Vienna \quad Austria \quad https://www.oenb.at
+        }}
+}
+
+%--- END Headers & Footers
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+
+\begin{document}
+\thispagestyle{plain}
+\vspace*{-6em}
+\begin{minipage}[t][][b]{0.6\textwidth}
+\vspace*{5em}
+\titlepre\textbf{\name}\titlepost\\\job\\\email\\\website\\[4em]
+\addressone\\\addresstwo\\[3em]
+%\addressone\\\addresstwo\\\phone\\[3em]
+\end{minipage}
+\hfill
+\begin{minipage}[t][][b]{0.39\textwidth}
+\begin{scriptsize}
+\includegraphics[width=\linewidth]{oenb_logo_blau.jpg}\hspace*{-1.5em}\\
+\hspace*{2.25em}\begin{minipage}[t][][b]{\textwidth}
+\textcolor{oenbcolor}{\rule{1.25cm}{3pt}}\\[1em]
+%\sffamily\textbf{Oesterreichische Nationalbank}
+\\[3em]
+
+
+\textrm{\normalsize{Vienna, \today}}
+\end{minipage}
+\end{scriptsize}
+\end{minipage}\vspace*{1em}
+
+\textbf{\regards}\\
+
+\vspace{0.6cm}
+
+\noindent Dear Editors, \\
+
+Please find attached our submission titled \textit{Financial Complexity, Cycles and Income Inequality} for your consideration for publication in the \textit{Journal of Economic Dynamics and Control}. \\
+
+In this paper, we introduce a banking sector and heterogeneous agents in the dynamic overlapping generations model of Matsuyama et al. (2016, JET). Our model captures the benefits and costs of an advanced banking system. While it allocates resources to productive activities, it can also hinder progress if it invests in projects that do not contribute to capital formation, and potentially triggering instabilities due to the emergence of cycles. Our intergenerational dynamic framework demonstrates that income inequality between agents increases during recessions, aligning with empirical observations. Moreover, we identify both changes in production factor prices and the reallocation of agents across occupations as driving factors behind the increased inequality. The current version of the manuscript has significantly benefited from the incorporation of feedback from anonymous experts in the field.\\
+
+This manuscript has not been published and is not under consideration for publication elsewhere. Thank you for your consideration, and I look forward to your response. \\
+
+\noindent Looking forward to hearing from you,\\
+sincerely yours\\
+\begin{figure}[ht]
+\includegraphics[width=0.25\textwidth]{sign.png} 
+\end{figure}
+
+Thomas O. Zoerner (on behalf of the authors)
+
+\end{document}
+
+
+
+
+
