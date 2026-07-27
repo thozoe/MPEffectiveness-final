@@ -21,52 +21,19 @@
 & Policy Rate & \texttt{DFF} &  Federal Funds Effective Rate  &daily, aggregated to weekly &level \\
 & Effective Monetary Stimulus & \texttt{EMS} &  Effective Monetary Stimulus \citep{krippner2016ems} &daily, aggregated to weekly &level\\
 & Shadow Short Rate & \texttt{SSR} & Shadow Short Rate \citep{krippner2016ems} &daily, aggregated to weekly &level\\
-\midrule
- \multicolumn{6}{c}{\color{red}(c) Global variables (used in the global-controls robustness specification, \autoref{app:rob})}\\[0.5em]
-& \color{red} Oil price & \color{red}\texttt{OIL} & \color{red} Brent crude oil spot price (FRED: DCOILBRENTEU) & \color{red} daily, aggregated to weekly & \color{red} percentage changes\\
-& \color{red} US dollar index & \color{red}\texttt{USD} & \color{red} Broad nominal US dollar index (FRED: DTWEXBGS, spliced with DTWEXM before 2006) & \color{red} daily, aggregated to weekly & \color{red} percentage changes\\
-& \color{red} VIX & \color{red}\texttt{VIX} & \color{red} CBOE volatility index (FRED: VIXCLS) & \color{red} daily, aggregated to weekly & \color{red} percentage changes\\
-& \color{red} Weekly activity & \color{red}\texttt{WAI} & \color{red} Bundesbank weekly activity index for Germany (used in \autoref{app:rob}) & \color{red} weekly & \color{red} level\\
+% \midrule
+%  \multicolumn{6}{c}{\color{red}(c) Global variables (used in the global-controls robustness specification, \autoref{app:rob})}\\[0.5em]
+% & \color{red} Oil price & \color{red}\texttt{OIL} & \color{red} Brent crude oil spot price (FRED: DCOILBRENTEU) & \color{red} daily, aggregated to weekly & \color{red} percentage changes\\
+% & \color{red} US dollar index & \color{red}\texttt{USD} & \color{red} Broad nominal US dollar index (FRED: DTWEXBGS, spliced with DTWEXM before 2006) & \color{red} daily, aggregated to weekly & \color{red} percentage changes\\
+% & \color{red} VIX & \color{red}\texttt{VIX} & \color{red} CBOE volatility index (FRED: VIXCLS) & \color{red} daily, aggregated to weekly & \color{red} percentage changes\\
+% & \color{red} Weekly activity & \color{red}\texttt{WAI} & \color{red} Bundesbank weekly activity index for Germany (used in \autoref{app:rob}) & \color{red} weekly & \color{red} level\\
 \bottomrule
 \end{tabular}}
 \begin{minipage}{\textwidth}
 \vspace{0.1cm}
-\scriptsize \textbf{Notes:} The inflation-linked swaps are gathered from Macrobond, while the remaining EA variables are obtained from the ECB's Statistical Data Warehouse (\href{https://sdw.ecb.europa.eu/}{https://sdw.ecb.europa.eu/})\rev{, now the ECB Data Portal (\href{https://data.ecb.europa.eu/}{data.ecb.europa.eu})}.  For computing the US monetary policy stance, we obtained the \texttt{DFF} from the FRED database of the Federal Reserve Bank of St. Louis (\href{https://fred.stlouisfed.org}{fred.stlouisfed.org}) and the real rate estimate of \cite{laubach2003measuring} from the database of the Federal Reserve Bank of New York (\href{https://www.newyorkfed.org/research/policy/rstar}{www.newyorkfed.org/research/policy/rstar}). The latter is available on a quarterly basis and was interpolated to match weekly frequency. All remaining variables were obtained on a daily basis and then aggregated to weekly frequency by taking the average. Both alternative US monetary policy measures are available on a daily basis and were downloaded from \href{https://www.ljkmfa.com/}{https://www.ljkmfa.com/}. \rev{All series are drawn from the data vintage of July 2026. Specifically, the natural rate is the COVID-adjusted estimate published by the Federal Reserve Bank of New York (through 2026:Q1); the policy surprise factors are the October 2025 vintage (see the footnote in \autoref{sec:measuring}); the aggregate CISS is spliced with its updated composite after May 2025; and the EONIA series is continued with the euro short-term rate (EuroSTR) plus 8.5 basis points following its discontinuation in January 2022. The euro area inflation-linked swap panel spans the entire sample period, so that the full system---bond yields, inflation swaps, and the macro-financial block---is estimated jointly on the single sample running from $2005$:W$1$ to the end of $2025$. The two alternative US stance metrics (\texttt{SSR} and \texttt{EMS}) are taken from the June 2026 vintage of the same source and likewise cover the full sample.}
+\scriptsize \textbf{Notes:} The inflation-linked swaps are gathered from Macrobond, while the remaining EA variables are obtained from the ECB Data Portal (\href{https://data.ecb.europa.eu/}{data.ecb.europa.eu}).  For computing the US monetary policy stance, we obtained the \texttt{DFF} from the FRED database of the Federal Reserve Bank of St. Louis (\href{https://fred.stlouisfed.org}{fred.stlouisfed.org}) and the real rate estimate of \cite{laubach2003measuring} from the database of the Federal Reserve Bank of New York (\href{https://www.newyorkfed.org/research/policy/rstar}{www.newyorkfed.org/research/policy/rstar}). The latter is available on a quarterly basis and was interpolated to match weekly frequency. All remaining variables were obtained on a daily basis and then aggregated to weekly frequency by taking the average. Both alternative US monetary policy measures are available on a daily basis and were downloaded from \href{https://www.ljkmfa.com/}{https://www.ljkmfa.com/}. All series are drawn from the data vintage of July 2026. Specifically, the natural rate is the COVID-adjusted estimate published by the Federal Reserve Bank of New York (through 2026:Q1); the policy surprise factors are the October 2025 vintage (see the footnote in \autoref{sec:measuring}); the aggregate CISS is spliced with its updated composite after May 2025. The euro area inflation-linked swap panel spans the entire sample period from $2005$:W$1$ to the end of $2025$. The two alternative US stance metrics (\texttt{SSR} and \texttt{EMS}) are taken from the June 2026 vintage of the same source and likewise cover the full sample.
 \end{minipage}
 \end{table}
 
 
 
-% \begin{table}[h!]
-% \centering
-% \footnotesize
-% \caption{Variable Definitions.}\label{tab:vardef}
-% \begin{tabular}{llp{7cm}p{4cm}l}
-%   \toprule
-%   Label & \textbf{Mnemonic} & Details & Source & Transformation\\
-%   \midrule
-%   \textbf{Euro Area} & & & & &\\[-0.5ex]
-%   \midrule
-%   $YLD$ & $\texttt{YLD}^{\tau Y}$ & EA government bond yields (AAA-rated)  with $\tau \in \{1:10,12,15,20,25,30\}$ year ahead & SDW ECB  &  level\\
-  
-%     $\bm{\pi}^e_t$ & $\texttt{INFSWP}^{\tau Y}$ & inflation linked swaps with $\tau \in \{1:10,12,15,20,25,30\}$ year ahead & Macrobond &\\
-
-%      EuroStoxx50 & $\texttt{Stocks}$ & inflation linked swaps with $\tau \in \{1:10,12,15,20,25,30\}$ year ahead & SDW ECB& \\
-
-%   Composite Indicator of Systemic Stress & $\texttt{CISS}$ & inflation linked swaps with $\tau \in \{1:10,12,15,20,25,30\}$ year ahead & SDW ECB & \\
-
-%   USD-EUR Exchange Rate & $\texttt{FX}$ & inflation linked swaps with $\tau \in \{1:10,12,15,20,25,30\}$ year ahead & SDW ECB &\\
-  
-
-%       \textbf{sr}$_t$ & \texttt{SR} & Shadow rate for euro area by \citet{wu2016measuring} & website of Jing Cynthia Wu \\
-%   $\bm{\pi}_t$ & $100 \times \ln \left(\frac{\texttt{HICP}_t}{\texttt{HICP}_{t-12}}\right)$ & year-on-year growth rate of harmonized index of consumer prices & constructed \\
-
-%    \midrule
-%   \textbf{United States} & & &&\\[-0.5ex]
-%   \midrule 
-% Fed policy stance$_t$ & \texttt{z_{US}} & Shadow rate for euro area by \citet{wu2016measuring} & website of Jing Cynthia Wu& \\
-
-  
-%   \bottomrule
-% \end{tabular}
-% \end{table}
