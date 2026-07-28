@@ -24,7 +24,10 @@ Following \cite{DIEBOLD2006337}, we set $\zeta_r = \zeta_{\pi} = 0.0609 \times 1
 
 
 \subsection{A nonlinear model to assess state dependent EA monetary policy}
-To model the euro area economy nonlinearly, we collect EA monetary policy surprises, $z_{EA,t}$, term-structure factors, $\bm{f}_t$, and three additional macro-financial variables in the $M \times 1$ vector, $\bm{y}_t = \left(z_{EA,t}, FX_t, Stocks_t, CISS_t, \bm{f}_t'\right)'$, where $M=10$. We assume that $\bm{y}_t$ evolves according to a smooth-transition VAR (STVAR) model \citep{terasvirta1992characterizing, weise1999asymmetric, gefang2009nonlinear, hubrich2013STVAR}:
+To model the euro area economy nonlinearly, we collect EA monetary policy surprises, $z_{EA,t}$, term-structure factors, $\bm{f}_t$, and three additional macro-financial variables in the $M \times 1$ vector
+\begin{equation*}
+\bm{y}_t = \left(z_{EA,t}, FX_t, Stocks_t, CISS_t, \bm{f}_t'\right)', \qquad M=10 .
+\end{equation*} We assume that $\bm{y}_t$ evolves according to a smooth-transition VAR (STVAR) model \citep{terasvirta1992characterizing, weise1999asymmetric, gefang2009nonlinear, hubrich2013STVAR}:
 \begin{equation}\label{eq:STVAR}
 \begin{aligned}
     \bm{y}_t = &\left(\bm c_{1} + \sum_{p = 1}^{P} \bm{A}_{1p} \bm{y}_{t-p} \right)\times S_t + \\

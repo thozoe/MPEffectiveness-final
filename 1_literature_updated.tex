@@ -1,32 +1,50 @@
-%% [2026-07-27] NEW SECTION -- entirely proposed, typeset in red via \rev{}.
-%% Replaces the "Literature." paragraph currently sitting at the end of the introduction,
-%% which should be deleted once this section is adopted (see the note reported in chat).
+%% Section added 2026-07-27; adopted (black) except where marked \rev{} (red).
+%% The superseded "Literature." paragraph is commented out at the end of the introduction.
 %%
-%% Citation protocol for this section:
+%% Bibliography changes made for this section:
 %%   UPDATED  gj2023global -- was "ECB Working Paper 2881" (2023); now published as
 %%            Journal of International Economics 158, 104169 (2025).
 %%   ADDED    boeck2025globalization (Boeck & Mori, JIE 157, 2025)
-%%            boeck2021fg            (Boeck, Feldkircher & Siklos, OBES 83(5), 2021)
 %%            boeck2024carry         (Boeck, Steshkova & Zoerner, OeNB WP 258, 2024)
-%%   DROPPED  ca2020monetary  -- ECB WP superseded by the published ca2021making.
-%%            kim2001international, canova2005transmission -- pre-crisis, superseded on
-%%            the same point by the post-2020 references retained below.
-%%            dees2007exploring, feldkircher2016international, koop2016model,
-%%            burriel2018uncovering -- the GVAR cluster is now represented by
-%%            georgiadis2017bi and dees2021global rather than by a six-item list.
-%%   RETAINED bluwstein2018beggar, crespo2019spillovers, breitenlechner2021spillbacks,
-%%            ca2021making, dees2021global, georgiadis2017bi, miranda2020us,
-%%            gopinath2021dominant, tenreyro2016pushing, altavilla2019measuring,
-%%            jarocinski2020deconstructing, DIEBOLD2006337.
+%%            boeck2021fg was added to lit_updated.bib but is not currently cited.
+%%   DROPPED  ca2020monetary here (ECB WP superseded by the published ca2021making),
+%%            though it remains cited in 2_framework_updated.tex; kim2001international
+%%            and canova2005transmission are no longer cited anywhere.
+%%            The GVAR cluster (dees2007exploring, feldkircher2016international,
+%%            koop2016model, burriel2018uncovering) is not cited in this section but
+%%            is still cited in the introduction, so all four remain in the bibliography.
+%%
+%% [2026-07-27] Every content claim below was checked against the published abstract,
+%% not against a secondary summary. Corrections made in that pass, all marked \rev{}:
+%%   ca2021making            -- the asymmetry is directional (Fed -> EA strong, ECB -> US
+%%                              absent), NOT "across countries and instruments".
+%%   breitenlechner2021spillbacks -- spillbacks materialise THROUGH advanced economies;
+%%                              the earlier wording implied they are larger IN them.
+%%   boeck2025globalization  -- the finding concerns what drives the AMPLIFICATION over
+%%                              time (trade integration primarily, financial modestly),
+%%                              not trade channels "surpassing" financial ones.
+%%   miranda2020us           -- the interest-parity clause was not in their abstract;
+%%                              replaced by the floating-exchange-rate result, which is
+%%                              in the abstract and is stronger for our purposes.
+%%   gopinath2021dominant    -- Dominant Currency Paradigm is about invoicing; "funding
+%%                              currency" removed.
+%%   gj2023global            -- confirmed correct; the three dimensions are now named and
+%%                              the "to a similar extent" qualifier added.
+%%   bluwstein2018beggar / crespo2019spillovers -- both were described as conditioning on
+%%                              financial-market states. Crespo Cuaresma et al. is time
+%%                              variation (TVP-GVAR); Bluwstein & Canova is cross-country
+%%                              heterogeneity in financial development. Reframed to match.
+%% Note: bluwstein2018beggar is a 2016 paper and gopinath2021dominant a 2020 paper;
+%% the keys are misleading but the entries and rendered years are correct.
 
 \section{Related Literature}\label{sec:literature}
 
-Our question lies at the intersection of three strands of literature, which our work connects by whether the effect of a domestic policy surprise depends on the stance of a foreign central bank.
+Our question lies at the intersection of three strands of literature. \rev{Each supplies one ingredient of our exercise, but none combines them to ask whether the effect of a domestic policy surprise depends on the stance of a foreign central bank.}
 
-The first strand documents the international transmission of US monetary policy. \citet{miranda2020us} show that a global financial cycle in asset prices, leverage and capital flows is driven in large part by the Fed, operating through risk premia rather than through interest parity alone, while \citet{gopinath2021dominant} trace a complementary channel running through the dollar's role as the dominant invoicing and funding currency. Recent contributions have sharpened both the shock and the mapping. \citet{gj2023global} decompose US policy into three dimensions and find that spillovers transmitted through trade and financial channels. \citet{breitenlechner2021spillbacks} show that these spillovers return to their source as quantitatively relevant spillbacks especially in advanced economies. Finally, \citet{ca2021making} document that transmission in a globalized world is asymmetric across countries and instruments. \citet{boeck2025globalization} ask whether the international transmission of US policy has itself changed as globalization proceeded, and find trade channels rivalling and eventually surpassing financial ones. The key component of this literature strand is that the origin of the shock is the foreign policy, while the domestic economy the recipient. We invert these roles. The Fed's stance is not our shock but our conditioning variable, and the shock originate domestically.
+The first strand documents the international transmission of US monetary policy. \citet{miranda2020us} show that a global financial cycle in asset prices, leverage and capital flows is driven in large part by the Fed, \rev{with US tightenings deleveraging global financial intermediaries and retrenching international credit flows; notably, countries with floating exchange rates are subject to similar spillovers, so an independent exchange rate does not insulate transmission}. \citet{gopinath2021dominant} trace a complementary channel running through the dollar's role as the dominant \rev{invoicing} currency. Recent contributions have sharpened both the shock and the mapping. \citet{gj2023global} decompose US policy into three dimensions \rev{(conventional policy, forward guidance and large-scale asset purchases) and find that all three generate large and comparable spillovers, transmitted through trade and financial channels to a similar extent}. \citet{breitenlechner2021spillbacks} show that these spillovers return to their source as quantitatively relevant spillbacks, \rev{materialising through advanced rather than emerging market economies}. Finally, \citet{ca2021making} document \rev{a stark asymmetry in the opposite direction: Fed shocks move euro area financial conditions and real activity, while ECB shocks have no comparable effect on the United States}. \citet{boeck2025globalization} ask whether the international transmission of US policy has itself changed as globalization proceeded, and find \rev{that the amplification of spillovers over recent decades is driven primarily by rising trade integration, with financial integration contributing only modestly}. The key component of this literature strand is that the origin of the shock is the foreign policy, while the domestic economy \rev{is} the recipient. We invert these roles. The Fed's stance is not our shock but our conditioning variable, and the shock \rev{originates} domestically.
 
-The second strand studies state dependence in monetary transmission: whether a given policy shock propagates differently depending on the environment into which it is delivered. Most of this work focus on domestic conditions, most prominently the business cycle, and reaches mixed conclusions \citep[see, e.g.,][]{tenreyro2016pushing}. Closer to our modelling design is work conditioning on financial-market states: \citet{boeck2024carry} use a threshold VAR to show that the transmission of policy to currency markets depends on the intensity of carry trade activity, and \citet{bluwstein2018beggar} and \citet{crespo2019spillovers} document that the size of cross-border effects varies with the financial environment. This branch of literature establishes that transmission is state dependent and provides the econometric techniques to measure it, but the state is almost always domestically determined. Our conditioning variable is the policy stance of a foreign central bank, which is conceptually distinct from domestic slack and, over our sample, moves largely independently of it.
+The second strand studies state dependence in monetary transmission: whether a given policy shock propagates differently depending on the environment into which it is delivered. Most of this work \rev{focuses} on domestic conditions, most prominently the business cycle, and reaches mixed conclusions \citep[see, e.g.,][]{tenreyro2016pushing}. Closer to our modelling design is work conditioning on financial-market states: \citet{boeck2024carry} use a threshold VAR to show that the transmission of policy to currency markets depends on the intensity of carry trade activity. \rev{Relatedly, the strength of cross-border effects is not constant: \citet{crespo2019spillovers} estimate a time-varying parameter global VAR and find pronounced changes in the transmission of US policy over time, weakening after the global financial crisis, while \citet{bluwstein2018beggar} document that spillovers are larger in countries with more developed financial systems.} This branch of literature establishes that transmission is state dependent and provides the econometric techniques to measure it, but the state is almost always domestically determined. Our conditioning variable is the policy stance of a foreign central bank, which is conceptually distinct from domestic slack and, over our sample, moves largely independently of it.
 
-The third strand supplies our measurement as high-frequency identification recovers policy surprises from market movements in narrow windows around announcements.  \citet{altavilla2019measuring} provide the euro area event-study database and factor decomposition we use. Because such surprises conflate policy news with information about the central bank's outlook, \citet{jarocinski2020deconstructing} propose a sign-restriction scheme that separates the two; we adopt their correction and use their shocks as an alternative identification in our robustness exercise. To move from individual maturities to the curve, we rely on the Nelson-Siegel tradition in the form of \citet{DIEBOLD2006337}, which lets us summarize fifteen maturities of nominal yields and inflation-linked swaps by a small set of factors and recover responses across the entire term structure.
+The third strand supplies our measurement as high-frequency identification recovers policy surprises from market movements in narrow windows around announcements. \citet{altavilla2019measuring} provide the euro area event-study database and factor decomposition we use. Because such surprises conflate policy news with information about the central bank's outlook, \citet{jarocinski2020deconstructing} propose a sign-restriction scheme that separates the two; we adopt their correction and use their shocks as an alternative identification in our robustness exercise. To move from individual maturities to the curve, we rely on the Nelson-Siegel tradition in the form of \citet{DIEBOLD2006337}, which lets us summarize fifteen maturities of nominal yields and inflation-linked swaps by a small set of factors and recover responses across the entire term structure.
 
 We thus combine the conditioning variable of the first strand with the question of the second, using the measurements of the third. Relative to the spillover literature, we do not ask how large the effects of a Fed shock are abroad, but whether the Fed's prevailing stance changes the transmission of someone else's policy. Relative to the state-dependence literature, we replace a domestic state with a foreign one, and we do so along a continuum rather than by splitting the sample into two regimes: the smooth transition function delivers a distinct set of dynamic coefficients for every value of the Fed's stance. Relative to both, we report the response of the full term structure of nominal yields, inflation compensation and real rates rather than of a single benchmark maturity \citep[thus following][]{boraugan2020term}. This last choice turns out to matter, because the state dependence we document is invisible at the short end and concentrated at the long end, and because the decomposition into real rates and inflation compensation locates where the composition of the adjustment changes and where it does not. To our knowledge, the interaction between the ECB's transmission and the Fed's stance has not previously been documented along the term structure.% \citet{georgiadis2017bi} shows that estimates of cross-border effects depend materially on whether the model is bilateral or multilateral, which is a caution we take seriously in interpreting the magnitude of our own estimates.
